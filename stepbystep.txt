@@ -1,0 +1,7 @@
+1. 安装node.js 6.9+
+2. 安装 dva-cli 并确保版本是 0.7.0 或以上
+  命令：npm install dva-cli -g
+3. git的使用
+  a. git init
+  b. git remote add origin https://github.com/gukun00/example.git
+4. 创建新应用：dva new dva-quickstart
