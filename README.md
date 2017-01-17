@@ -78,7 +78,7 @@ $ cd dva-example && npm install
 
 #### 2017.01.16
 
-- 初次发布111
+- 初次发布
 
 
 ## 为什么使用antd
