@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Table, Popconfirm, Button } from 'antd';
 
-const UserList = ({ onDelete, users }) => {
+const UserList = ({ onDelete, users,add }) => {
   const columns = [{
     title: '姓名',
     dataIndex: 'name',
@@ -20,13 +20,17 @@ const UserList = ({ onDelete, users }) => {
     title: 'Actions',
     render: (text, record) => {
       return (
+        <div>
         <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
           <Button>Delete</Button>
         </Popconfirm>
-        
+          <Button onClick={() => add()}>Add</Button>
+        </div>
       );
     },
   }];
+
+
   return (
     <Table
       dataSource={users}
@@ -35,9 +39,12 @@ const UserList = ({ onDelete, users }) => {
   );
 };
 
+
+
 UserList.propTypes = {
   onDelete: PropTypes.func.isRequired,
   users: PropTypes.array.isRequired,
+  add : PropTypes.func.isRequired,
 };
 
 export default UserList;

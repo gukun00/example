@@ -12,5 +12,9 @@ export default {
     'delete'(state, {payload: id}) {
       return state.filter(item => item.id !== id);
     },
+    'add'(state,{}){
+      alert("add")
+      //需要弹出列表，进行增加
+    }
   },
 };

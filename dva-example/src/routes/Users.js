@@ -9,10 +9,17 @@ const Users = ({ dispatch, users }) => {
       payload: id,
     });
   }
+
+  function handleAdd() {
+    dispatch({
+      type: 'users/add',
+    });
+  }
+
   return (
     <div>
       <h2>List of Users</h2>
-      <UserList onDelete={handleDelete} users={users} />
+      <UserList onDelete={handleDelete} add={handleAdd} users={users} />
     </div>
   );
 };
