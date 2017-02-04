@@ -35,32 +35,32 @@ $ cd dva-example && npm install
 ##### 目录结构
 
 ``` js
-.
-├── mock                      # 假数据文件
-├── public                    # 公共组件
-│   └── index.html
-└── src                       # 源代码目录
-    ├── assets                # 资源目录
-    │   └── yay.jpg
-    ├── components            # 组件目录
-    │   ├── Example.js        # 自带例子，参考
-    │   └── UserList.js       # 本demo中的用户列表组件
-    ├── index.css             # 默认css
-    ├── index.js              # 程序入口
-    ├── models                # Model层
-    │   ├── example.js        # 自带例子，参考
-    │   └── users.js          # 用户实体
-    ├── router.js             # 路由（参考express）
-    ├── routes                # 子路由入口集
-    │   ├── IndexPage.css
-    │   ├── IndexPage.js
-    │   └── Users.js          # 子路由入口（用户）
-    ├── services              # 服务方法
-    │   └── example.js
-    └── utils                 # 工具类
-        └── request.js        
 
-
+  .
+  ├── action            #忽略，未用
+  │   └── auth.js
+  ├── assets
+  │   └── yay.jpg       #忽略，未用
+  ├── auth              #忽略，未用
+  ├── components        # 组件目录
+  │   ├── Example.js    # 自带例子，参考   
+  │   ├── UserAdd.js    # 新增及修改页面
+  │   └── UserList.js   # 本demo中的用户列表组件
+  ├── index.css
+  ├── index.js
+  ├── models
+  │   ├── example.js
+  │   └── users.js
+  ├── router.js
+  ├── routes
+  │   ├── IndexPage.css
+  │   ├── IndexPage.js
+  │   ├── UserAdd.js   # 子路由入口（用户新增及修改）
+  │   └── Users.js     # 子路由入口（用户）
+  ├── services
+  │   └── example.js
+  └── utils
+      └── request.js
 ```
 
 ### 编译
@@ -81,11 +81,16 @@ $ cd dva-example && npm install
 - 初次发布
 
 
-## 为什么使用antd
-  - 相对于传统的react全家桶，antd比较自动化，环境搭建相对比较容易
-  - 程序架构比较成熟，且有成熟的维护团队
-  - 界面友好，例子比较全
-  - 个人比较喜欢其中的程序架构^_^
+## 为什么使用dva
+  - 2017.01.16
+    - 相对于传统的react全家桶，dva比较自动化，环境搭建相对比较容易
+    - 程序架构比较成熟，且有成熟的维护团队
+    - 界面友好，例子比较全
+    - 个人比较喜欢其中的程序架构^_^
+  - 2017.02.04
+    - antd+dva的开发模式比较小清新，但是生态系统一般，例子太少，后面我将探索纯react+redux的例子
+    - to be continue
+    - mangoo的例子先不做了，比较简单，下次再做
 
 ## 例子简介
   - 基于ant-designer官网的项目实战搭建的例子
