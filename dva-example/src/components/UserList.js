@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Table, Popconfirm, Button } from 'antd';
+import { browserHistory } from 'react-router'
 
-const UserList = ({ onDelete, users,add }) => {
+import { Router, Route, Link, hashHistory, IndexRoute, Redirect, IndexLink} from 'dva/router';
+
+const UserList = ({ onDelete, users,save }) => {
   const columns = [{
     title: '姓名',
-    dataIndex: 'name',
+    dataIndex: 'username',
   }, {
     title: '性别',
     dataIndex: 'sex',
@@ -19,23 +22,33 @@ const UserList = ({ onDelete, users,add }) => {
   },{
     title: 'Actions',
     render: (text, record) => {
+      //alert(text)
+
       return (
         <div>
         <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
           <Button>Delete</Button>
         </Popconfirm>
-          <Button onClick={() => add()}>Add</Button>
+        <Link to={{ pathname: '/UserAdd/' + record.id , state: { id: record.id } }}><Button>Edit</Button></Link>
         </div>
       );
     },
   }];
 
+  // function jumpNextLink(id) {
+  //     const { history } = this.props;
+  //     histroy.push({ pathname: "/UserAdd", state: { } });
+  // }
 
   return (
-    <Table
-      dataSource={users}
-      columns={columns}
-    />
+    <div>
+      <Link to="/UserAdd/0"><Button>Add</Button></Link>
+      <Button onClick={save}>Save</Button>
+      <Table
+        dataSource={users}
+        columns={columns}
+      />
+    </div>
   );
 };
 
@@ -44,7 +57,7 @@ const UserList = ({ onDelete, users,add }) => {
 UserList.propTypes = {
   onDelete: PropTypes.func.isRequired,
   users: PropTypes.array.isRequired,
-  add : PropTypes.func.isRequired,
+  save : PropTypes.func.isRequired,
 };
 
 export default UserList;

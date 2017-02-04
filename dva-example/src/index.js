@@ -7,12 +7,12 @@ const app = dva({
   initialState: {
     users: [
       {
-        name: '张三',
+        username: '张三',
         sex : 1,
         id: 1
       },
       {
-        name: '李四',
+        username: '李四',
         sex : 2,
         id: 2
       }
@@ -26,7 +26,6 @@ const app = dva({
 
 // 3. Model
 // app.model(require('./models/example'));
-app.model(require('./models/example'));
 app.model(require('./models/users'));
 
 // 4. Router
